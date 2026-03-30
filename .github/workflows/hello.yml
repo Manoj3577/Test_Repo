@@ -6,7 +6,7 @@ on:
   push:
     branches: [main]
 
-# There are the jobs inside workflows
+# There are the jobs1 inside workflows
 jobs:
 # This is the name of the jobs
   TestJob:
@@ -16,6 +16,8 @@ jobs:
        run: echo "hello dosto"
      - name: say hello to username
        run: echo "hello $USER"
+
+  # There are the jobs1 inside workflows
   TestJob2:
     runs-on: ubuntu-latest
     steps:
