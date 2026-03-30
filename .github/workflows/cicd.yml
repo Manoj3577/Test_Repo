@@ -1,0 +1,32 @@
+#thsi is the name of workflows which is dispay on action tab
+name: cicd
+
+#manual click to deliver work flow whennver user need
+on:
+  workflow_dispatch:
+
+jobs:
+
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        run: echo "code clone from github"
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Docker contariner
+        run: echo "Docker container build"
+        
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test the container
+        run: echo "Testing the container"
+        
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploying the ap
+        run: echo " Docker compose deployed app"
+    
