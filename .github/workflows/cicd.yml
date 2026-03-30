@@ -23,7 +23,6 @@ jobs:
       - name: checkout code
         run: echo "code clone from github"
   build:  
-    if:  inputs.enviroments=='dev'
     needs: [code]
     runs-on: ubuntu-latest
     steps:
@@ -37,6 +36,7 @@ jobs:
         run: echo "Testing the container"
         
   deploy:
+    if:  inputs.enviroments=='dev'
     needs: [test]
     runs-on: ubuntu-latest
     steps:
