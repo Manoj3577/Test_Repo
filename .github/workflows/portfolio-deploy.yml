@@ -2,7 +2,7 @@ name: Portfolio
 
 on:
   push:
-    branches:[main]
+    branches: [main]
 permissions:
   pages: write
   id-token: write
@@ -10,9 +10,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    enviroment:
+    environment:
       name: github-pages
-      url: ${{step.deployments.output.page_url}}
+      url: ${{steps.deployment.outputs.page_url}}
 
     steps:
       #get access to your portfolio code via pre-build action
@@ -21,7 +21,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      #Steup Github pages
+      #Setup Github pages
       #STEP 2    
       - name: Steup GitHub Pages
         uses: actions/configure-pages@v4
