@@ -26,6 +26,8 @@ jobs:
       #STEP 2    
       - name: Steup GitHub Pages
         uses: actions/configure-pages@v4
+        with:
+          path: .
       
       #Static code artifact
       #STEP 3
